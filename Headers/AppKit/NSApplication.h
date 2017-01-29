@@ -39,6 +39,7 @@
 #define _GNUstep_H_NSApplication
 #import <GNUstepBase/GSVersionMacros.h>
 
+#import <Foundation/NSNotification.h>
 #import <AppKit/NSResponder.h>
 #import <AppKit/NSUserInterfaceValidation.h>
 
@@ -749,6 +750,8 @@ NSShowSystemInfoPanel(NSDictionary *options);
  * The NSApp global variable.
  */
 APPKIT_EXPORT NSApplication	*NSApp;
+
+const NSNotificationName NSWorkspaceDidDeactivateApplicationNotification;
 
 #if defined(__cplusplus)
 }
