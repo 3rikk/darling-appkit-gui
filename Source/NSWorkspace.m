@@ -1672,12 +1672,13 @@ inFileViewerRootedAtPath: (NSString*)rootFullpath
  */
 - (void) findApplications
 {
+  /*
   static NSString	*path = nil;
   NSTask		*task;
 
   /*
    * Try to locate and run an executable copy of 'make_services'
-   */
+   
   if (path == nil)
     {
       path = [[NSTask launchPathForTool: @"make_services"] retain];
@@ -1691,6 +1692,7 @@ inFileViewerRootedAtPath: (NSString*)rootFullpath
   [self _workspacePreferencesChanged:
      [NSNotification notificationWithName: GSWorkspacePreferencesChanged
 				   object: self]];
+  */
 }
 
 /**
