@@ -137,6 +137,7 @@ typedef struct _GSButtonCellFlags
   [self setAlignment: NSCenterTextAlignment];
   _cell.is_bordered = YES;
   [self setButtonType: NSMomentaryPushInButton];
+  [self setBezelStyle: NSRoundedBezelStyle];
   _delayInterval = 0.4;
   _repeatInterval = 0.075;
   _keyEquivalentModifierMask = 0;
@@ -1467,9 +1468,9 @@ typedef struct _GSButtonCellFlags
       border.right = 0;
       border.bottom = 0;
     }
-      
-  /* Add an additional 6 pixels horizontally so that the text is not
-   * too near the boundaries of the button.  Without them, autosized
+
+  /* Add additional padding around the title so that the text is not
+   * too near the boundaries of the button.  Without it, autosized
    * buttons look too tiny and crammed.  This might be made
    * configurable by the theme, but most likely only because themes
    * might want to have even more space here (to make buttons more
@@ -1482,6 +1483,8 @@ typedef struct _GSButtonCellFlags
     {
       border.left += 6;
       border.right += 6;
+      border.top += 3;
+      border.bottom += 3;
     }
 
   // Add border size
