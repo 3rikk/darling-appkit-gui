@@ -28,7 +28,7 @@ else(BITS EQUAL 64)
 endif(BITS EQUAL 64)
 
 SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/darling")
-SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) 
+SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -271,7 +271,7 @@ set(appkit_gui_SRCS
 	Source/NSShadow.m
 	Source/NSSlider.m
 	Source/NSSliderCell.m
-	Source/NSSound.m 
+	Source/NSSound.m
 	Source/NSSpeechSynthesizer.m
 	Source/NSSpellChecker.m
 	Source/NSSplitView.m
@@ -369,9 +369,173 @@ set(appkit_gui_SRCS
 	Source/GSXibLoading.m
 	Source/GSXibObjectContainer.m
 	Source/GSXibParser.m
-	Source/GSHelpAttachment.m 
+	Source/GSHelpAttachment.m
 )
 
 set_source_files_properties(${appkit_gui_SRCS} LANGUAGE C)
 
 add_library(appkit-gui OBJECT ${appkit_gui_SRCS})
+
+set(appkit_gui_images
+	Images/GNUstep.tiff
+	Images/GNUstepMenuImage.tiff
+	Images/GSSearch.tiff
+	Images/GSStop.tiff
+	Images/LogoGNUstep.tiff
+	Images/MagnifyGlass.tiff
+	Images/NSAddTemplate.tiff
+	Images/NSComboArrow.tiff
+	Images/NSRatingLevelIndicator.tiff
+	Images/NSRemoveTemplate.tiff
+	Images/common_2DCheckMark.tiff
+	Images/common_2DDash.tiff
+	Images/common_3DArrowDown.tiff
+	Images/common_3DArrowLeft.tiff
+	Images/common_3DArrowRight.tiff
+	Images/common_3DArrowRightH.tiff
+	Images/common_3DArrowUp.tiff
+	Images/common_ApplicationFolder.tiff
+	Images/common_ArrowDown.tiff
+	Images/common_ArrowDownH.tiff
+	Images/common_ArrowLeft.tiff
+	Images/common_ArrowLeftH.tiff
+	Images/common_ArrowRight.tiff
+	Images/common_ArrowRightH.tiff
+	Images/common_ArrowUp.tiff
+	Images/common_ArrowUpH.tiff
+	Images/common_CenterTabStop.tiff
+	Images/common_Close.tiff
+	Images/common_CloseBroken.tiff
+	Images/common_CloseBrokenH.tiff
+	Images/common_CloseH.tiff
+	Images/common_ClosedHandCursor.tiff
+	Images/common_ColorSwatch.tiff
+	Images/common_ComboBoxEllipsis.tiff
+	Images/common_DecimalTabStop.tiff
+	Images/common_Desktop.tiff
+	Images/common_Diamond.tiff
+	Images/common_Dimple.tiff
+	Images/common_DimpleHoriz.tiff
+	Images/common_DocsFolder.tiff
+	Images/common_DownloadFolder.tiff
+	Images/common_DownArrowSmall.tiff
+	Images/common_Folder.tiff
+	Images/common_GSFolder.tiff
+	Images/common_HelpCursor.tiff
+	Images/common_HelpLink.tiff
+	Images/common_Home.tiff
+	Images/common_HomeDirectory.tiff
+	Images/common_ImageFolder.tiff
+	Images/common_Info.tiff
+	Images/common_LeftTabStop.tiff
+	Images/common_LibraryFolder.tiff
+	Images/common_MiniWindowTile.tiff
+	Images/common_Miniaturize.tiff
+	Images/common_MiniaturizeH.tiff
+	Images/common_MusicFolder.tiff
+	Images/common_Mount.tiff
+	Images/common_Nibble.tiff
+	Images/common_OpenHandCursor.tiff
+	Images/common_Printer.tiff
+	Images/common_RadioOff.tiff
+	Images/common_RadioOn.tiff
+	Images/common_Right.tiff
+	Images/common_RightH.tiff
+	Images/common_RightTabStop.tiff
+	Images/common_Root_Apple.tiff
+	Images/common_Root_PC.tiff
+	Images/common_Root_SGI.tiff
+	Images/common_Root_Sparc.tiff
+	Images/common_Root_Sparc2.tiff
+	Images/common_SliderHoriz.tiff
+	Images/common_SliderVert.tiff
+	Images/common_StepperDown.tiff
+	Images/common_StepperDownHighlighted.tiff
+	Images/common_StepperUp.tiff
+	Images/common_StepperUpHighlighted.tiff
+	Images/common_SwitchOff.tiff
+	Images/common_SwitchOn.tiff
+	Images/common_TabDownSelectedLeft.tiff
+	Images/common_TabDownSelectedRight.tiff
+	Images/common_TabDownSelectedToUnSelectedJunction.tiff
+	Images/common_TabDownUnSelectedJunction.tiff
+	Images/common_TabDownUnSelectedLeft.tiff
+	Images/common_TabDownUnSelectedRight.tiff
+	Images/common_TabDownUnSelectedToSelectedJunction.tiff
+	Images/common_TabSelectedLeft.tiff
+	Images/common_TabSelectedRight.tiff
+	Images/common_TabSelectedToUnSelectedJunction.tiff
+	Images/common_TabUnSelectedToSelectedJunction.tiff
+	Images/common_TabUnSelectedJunction.tiff
+	Images/common_TabUnSelectedLeft.tiff
+	Images/common_TabUnSelectedRight.tiff
+	Images/common_Tile.tiff
+	Images/common_ToolbarClippedItemsMark.tiff
+	Images/common_ToolbarCustomizeToolbarItem.tiff
+	Images/common_ToolbarSeparatorItem.tiff
+	Images/common_ToolbarShowColorsItem.tiff
+	Images/common_ToolbarShowFontsItem.tiff
+	Images/common_ToolbarSpaceItem.tiff
+	Images/common_Unknown.tiff
+	Images/common_UnknownApplication.tiff
+	Images/common_UnknownTool.tiff
+	Images/common_Unmount.tiff
+	Images/common_UpAndDownArrowSmall.tiff
+	Images/common_VideoFolder.tiff
+	Images/common_copyCursor.tiff
+	Images/common_linkCursor.tiff
+	Images/common_noCursor.tiff
+	Images/common_outlineCollapsed.tiff
+	Images/common_outlineExpanded.tiff
+	Images/common_outlineUnexpandable.tiff
+	Images/common_ret.tiff
+	Images/common_retH.tiff
+	Images/common_ProgressIndeterminate_1.tiff
+	Images/common_ProgressIndeterminate_2.tiff
+	Images/common_ProgressIndeterminate_3.tiff
+	Images/common_ProgressIndeterminate_4.tiff
+	Images/common_ProgressIndeterminate_5.tiff
+	Images/common_ProgressIndeterminate_6.tiff
+	Images/common_ProgressSpinning_1.tiff
+	Images/common_ProgressSpinning_2.tiff
+	Images/common_ProgressSpinning_3.tiff
+	Images/common_ProgressSpinning_4.tiff
+	Images/common_ProgressSpinning_5.tiff
+	Images/common_ProgressSpinning_6.tiff
+	Images/common_ProgressSpinning_7.tiff
+	Images/common_ProgressSpinning_8.tiff
+	Images/page_landscape.tiff
+	Images/page_portrait.tiff
+	Images/common_MultipleSelection.tiff
+	Images/common_RecyclerEmpty.tiff
+	Images/common_RecyclerFull.tiff
+	Images/NSColorPanel.tiff
+	Images/NSFontPanel.tiff
+	Images/NSCaution.tiff
+	Images/NSInfo.tiff
+	Images/NSPreferencesGeneral.tiff
+	Images/NSAdvanced.tiff
+	Images/NSUserAccounts.tiff
+
+	Images/nsmapping.strings
+)
+
+install(FILES ${appkit_gui_images} DESTINATION libexec/darling/System/Library/Images)
+
+set(appkit_gui_sounds
+	Sounds/Basso.wav
+	Sounds/Blow.wav
+	Sounds/Bottle.wav
+	Sounds/Frog.wav
+	Sounds/Glass.wav
+	Sounds/Hero.wav
+	Sounds/Ping.wav
+	Sounds/Pop.wav
+	Sounds/Sosumi.wav
+	Sounds/Submarine.wav
+	Sounds/Tink.wav
+)
+
+install(FILES ${appkit_gui_sounds} DESTINATION libexec/darling/System/Library/Sounds)
+
+install(FILES KeyBindings/DefaultKeyBindings.dict DESTINATION libexec/darling/System/Library/KeyBindings)
