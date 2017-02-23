@@ -1290,13 +1290,13 @@ inFileViewerRootedAtPath: (NSString*)rootFullpath
   if (uid == 0 || uid == m2.f_owner)
     hasOwnership = YES;
 #endif
-  
+
   *unmountableFlag = !isRootFS && hasOwnership;
-  
+
   *description = @"filesystem"; // FIXME
 
   *fileSystemType = nil;
-#if defined (__linux__)
+#if defined (__linux__) && !defined(DARLING)
   struct statfs m2;
 
   statfs([fullPath fileSystemRepresentation], &m2);
